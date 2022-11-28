@@ -1,5 +1,14 @@
-function sumItems(array) {
-  // Sum all the numbers in the array
-}
+const sumItems = (array) => {
+  let sum = 0;
+  const dig = (arr) => arr.forEach(e => {
+    if (Array.isArray(e)) {
+      dig(e);
+    } else {
+      sum += e;
+    }
+  });
+  dig(array);
+  return sum;
+};
 
 module.exports = sumItems;
